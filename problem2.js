@@ -1,19 +1,3 @@
-function calculateTax(income, expenses) {
-  if (
-    typeof income !== "number" ||
-    typeof expenses !== "number" ||
-    income < 0 ||
-    expenses < 0 ||
-    expenses > income
-  ) {
-    return "Invalid Input";
-  }
-
-  const totalIncome = income - expenses;
-  const tax = (totalIncome * 20) / 100;
-  return tax;
-}
-
 function sendNotification(email) {
   email = email.trim();
   if (typeof email !== "string" || !email.includes("@")) {
@@ -40,3 +24,10 @@ function sendNotification(email) {
   const output = `${userName} sent you an email from ${domainName}.`;
   return output;
 }
+
+// const input = sendNotification("sadia8icloud.com");
+// const input = sendNotification("fahim234.hotmail.com");
+// const input = sendNotification("nadim.naem5@outlook.com");
+// const input = sendNotification("farhan34@yahoo.com");
+const input = sendNotification("zihad@gmail.com");
+console.log(input);
