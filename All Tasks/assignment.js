@@ -41,7 +41,6 @@ function sendNotification(email) {
   return output;
 }
 
-
 function checkDigitsInName(name) {
   if (typeof name !== "string") {
     return "Invalid Input";
@@ -53,7 +52,6 @@ function checkDigitsInName(name) {
   }
   return false;
 }
-
 
 function calculateFinalScore(obj) {
   if (
@@ -75,4 +73,24 @@ function calculateFinalScore(obj) {
     totalMarks += 20;
   }
   return totalMarks >= 80;
+}
+
+function waitingTime(waitingTimes, serialNumber) {
+  if (
+    !Array.isArray(waitingTimes) ||
+    typeof serialNumber !== "number" ||
+    serialNumber <= waitingTimes.length
+  ) {
+    return "Invalid Input";
+  }
+  let totalTime = 0;
+  for (const time of waitingTimes) {
+    totalTime += time;
+  }
+  const avgTime = Math.round(totalTime / waitingTimes.length);
+  const candidatesBefore = serialNumber - 1;
+  const remainingCandidates = candidatesBefore - waitingTimes.length;
+  const haveToWait =
+    remainingCandidates > 0 ? avgTime * remainingCandidates : 0;
+  return haveToWait;
 }

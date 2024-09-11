@@ -3,6 +3,9 @@ function checkDigitsInName(name) {
     return "Invalid Input";
   }
   for (const char of name) {
+    // if (typeof char === "number") {
+    //   return true;
+    // }
     if (char >= "0" && char <= "9") {
       return true;
     }
@@ -13,5 +16,5 @@ function checkDigitsInName(name) {
 // const input = checkDigitsInName("!@#");
 // const input = checkDigitsInName("Name2024");
 // const input = checkDigitsInName("Suman");
-// const input = checkDigitsInName("Raj123");
+const input = checkDigitsInName("Raj123");
 console.log(input);
