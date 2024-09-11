@@ -40,3 +40,16 @@ function sendNotification(email) {
   const output = `${userName} sent you an email from ${domainName}.`;
   return output;
 }
+
+
+function checkDigitsInName(name) {
+  if (typeof name !== "string") {
+    return "Invalid Input";
+  }
+  for (const char of name) {
+    if (char >= "0" && char <= "9") {
+      return true;
+    }
+  }
+  return false;
+}
